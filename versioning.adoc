@@ -1,0 +1,21 @@
+
+# Use Git
+
+Test
+
+  ssh -T git@github.com
+
+Check keys
+
+  ls -al ~/.ssh
+
+Commands:
+
+  git init
+  git add . Or git add --all
+  git commit -m 'First commit'
+  git remote add origin <remote repository URL>
+  git remote -v
+  git pull origin master && git push origin master
+  git pull git@github.com:jeremy886/learn_python.git master
+  git pull origin master --allow-unrelated-histories
