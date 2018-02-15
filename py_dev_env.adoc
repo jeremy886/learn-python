@@ -1,0 +1,36 @@
+Reasons to use pipenv
+# No need to muck with shells (zsh/bash)
+# Endorsed by PSF website
+
+
+Use:
+
+pip install pipenv
+
+Usage Examples:
+   Create a new project using Python 3.6, specifically:
+   $ pipenv --python 3.6
+
+   Install all dependencies for a project (including dev):
+   $ pipenv install --dev
+
+   Create a lockfile containing pre-releases:
+   $ pipenv lock --pre
+
+   Show a graph of your installed dependencies:
+   $ pipenv graph
+
+   Check your installed dependencies for security vulnerabilities:
+   $ pipenv check
+
+   Install a local setup.py into your virtual environment/Pipfile:
+   $ pipenv install -e .
+
+
+Pip
+
+ -t, --target <dir>
+
+Install packages into <dir>. By default this will not replace existing files/folders in <dir>. Use --upgrade to replace existing packages in <dir> with new versions.
+
+https://pip.pypa.io/en/stable/reference/pip_install/#options
