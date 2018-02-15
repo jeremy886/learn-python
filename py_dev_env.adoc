@@ -40,7 +40,8 @@ https://pip.pypa.io/en/stable/reference/pip_install/#options
 
 # Pyenv
 
-.Working with Python 3
+. Working with Python 3
+I don't use pyenv anymore so the content is won't be up-to-date.
 
 - Development
 - pyenv
@@ -140,7 +141,8 @@ Uninstall
 When you uninstall an interpreter, it will ask you to remove the associated virtualenv:
 
 	➜ ~ pyenv uninstall 2.7.13
-	pyenv-virtualenv: remove /Users/apple/.pyenv/versions/2.7.13/envs/py27-lektor? y pyenv: remove /Users/apple/.pyenv/versions/2.7.13? y
+	pyenv-virtualenv: remove /Users/apple/.pyenv/versions/2.7.13/envs/py27-lektor? y 
+	pyenv: remove /Users/apple/.pyenv/versions/2.7.13? y
 
 I want to know which virtualenv attaches to which interpreter:
 
