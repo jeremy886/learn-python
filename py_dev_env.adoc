@@ -1,4 +1,4 @@
-== Pipenv
+# Pipenv
 
 Reasons to use pipenv
 # No need to muck with shells (zsh/bash)
@@ -10,23 +10,23 @@ Use:
 pip install pipenv
 
 Usage Examples:
-   Create a new project using Python 3.6, specifically:
-   $ pipenv --python 3.6
+	Create a new project using Python 3.6, specifically:
+    $ pipenv --python 3.6
 
-   Install all dependencies for a project (including dev):
-   $ pipenv install --dev
+    Install all dependencies for a project (including dev):
+    $ pipenv install --dev
 
-   Create a lockfile containing pre-releases:
-   $ pipenv lock --pre
+    Create a lockfile containing pre-releases:
+    $ pipenv lock --pre
 
-   Show a graph of your installed dependencies:
-   $ pipenv graph
+    Show a graph of your installed dependencies:
+    $ pipenv graph
 
-   Check your installed dependencies for security vulnerabilities:
-   $ pipenv check
+    Check your installed dependencies for security vulnerabilities:
+    $ pipenv check
 
-   Install a local setup.py into your virtual environment/Pipfile:
-   $ pipenv install -e .
+    Install a local setup.py into your virtual environment/Pipfile:
+    $ pipenv install -e .
 
 
 Pip
@@ -38,89 +38,115 @@ Install packages into <dir>. By default this will not replace existing files/fol
 https://pip.pypa.io/en/stable/reference/pip_install/#options
 
 
-== Pyenv
+# Pyenv
 
-Working with Python 3
+.Working with Python 3
 
-Development
-pyenv
-pyenv github
-Installation
+- Development
+- pyenv
+- pyenv github
+- Installation
+
 list available versions
-pyenv install -l
+
+	pyenv install -l
 
 install python interpreters
-pyenv install 3.6.3 
-pyenv install miniconda3-latest
+
+	pyenv install 3.6.3 
+	pyenv install miniconda3-latest
 
 Virtual Environment
-create virtualenv with pyenv
-pyenv virtualenv 3.6.3 myenv 
-pyenv virtualenv miniconda3-latest enaml
+
+	create virtualenv with pyenv
+	pyenv virtualenv 3.6.3 myenv 
+	pyenv virtualenv miniconda3-latest enaml
 
 conda
-For me, on conda 4.1.2 I had to run source \~/.pyenv/versions/\<env_dir\>/bin/activate \<env_name\> at least once to make it work
-Create virtualenv from the current interpreter version:
-➜  ~ pyenv version   
-3.6.3 (set by /Users/apple/.pyenv/version)
 
-➜  ~ pyenv virtualenv emacs
-Requirement already satisfied: setuptools in /Users/apple/.pyenv/versions/3.6.0/envs/emacs/lib/python3.6/site-packages
-Requirement already satisfied: pip in /Users/apple/.pyenv/versions/3.6.0/envs/emacs/lib/python3.6/site-packages
+For me, on conda 4.1.2 I had to run source \~/.pyenv/versions/\<env_dir\>/bin/activate \<env_name\> at least once to make it work.
+
+Create virtualenv from the current interpreter version:
+
+	➜  ~ pyenv version   
+		3.6.3 (set by /Users/apple/.pyenv/version)
+
+	➜  ~ pyenv virtualenv emacs
+	Requirement already satisfied: setuptools in /Users/apple/.pyenv/versions/3.6.0/envs/emacs/lib/python3.6/site-packages
+	Requirement already satisfied: pip in /Users/apple/.pyenv/versions/3.6.0/envs/emacs/lib/python3.6/site-packages
 
 list installed interpreters and virtual environments
-pyenv versions
+
+	pyenv versions
 
 list installed environments
-pyenv virtualenvs
+
+	pyenv virtualenvs
 
 activate and deactivate a virtual environment
-pyenv activate <name>
-pyenv deactivate <name>
+
+	pyenv activate <name>
+	pyenv deactivate <name>
 
 Delete existing virtualenv
-pyenv uninstall my-virtual-env
+
+	pyenv uninstall my-virtual-env
 
 Examples:
-Show installed interpreters and virtual environments:
-~ pyenv versions
-  system
-  2.7.13
-  2.7.13/envs/py27-lektor
-  3.5.2
-* 3.6.0 (set by /Users/apple/.pyenv/version)
-  3.6.0/envs/py36-lektor
-  3.6.0/envs/py36-nikola
-  3.6.0/envs/pydata
-  3.6.0/envs/sphinx
-  py27-lektor
-  py36-lektor
-  py36-nikola
-  pydata
-  sphinx
+
+	Show installed interpreters and virtual environments:
+	~ pyenv versions
+	  system
+	  2.7.13
+	  2.7.13/envs/py27-lektor
+	  3.5.2
+	* 3.6.0 (set by /Users/apple/.pyenv/version)
+	  3.6.0/envs/py36-lektor
+	  3.6.0/envs/py36-nikola
+	  3.6.0/envs/pydata
+	  3.6.0/envs/sphinx
+	  py27-lektor
+	  py36-lektor
+	  py36-nikola
+	  pydata
+	  sphinx
 
 Auto set Python version and environement
+
 Set global interpreter
+
 It modifies \~/.pyenv/version
+
 set the global interpreter (default)
-: pyenv global 3.6.0
+
+	pyenv global 3.6.0
+
 Tools installed in the global
-	•	retext (and dependencies like QT)
+- retext (and dependencies like QT)
+
 Set local interpreter (for the directory)
+
 It modifies pwd/.python-version
-pyenv local <version|virtualenv>
+
+	pyenv local <version|virtualenv>
 
 Upgrade
-	•	upgrade pyenv first cd $(pyenv root) # cd ./pyenv git pull 
-	•	upgrade environments pip freeze \> requirements.txt pyenv uninstall pyteacher pyenv virtualenv 3.6.1 pyteacher pyenv activate pyteacher pip list --outdated \| cut -d' ' -f1 \| xargs pip install --upgrade 
+
+- upgrade pyenv first cd $(pyenv root) # cd ./pyenv git pull 
+- upgrade environments pip freeze \> requirements.txt pyenv uninstall pyteacher pyenv virtualenv 3.6.1 pyteacher pyenv activate pyteacher - pip list --outdated \| cut -d' ' -f1 \| xargs pip install --upgrade 
+
 Uninstall
+
 When you uninstall an interpreter, it will ask you to remove the associated virtualenv:
-➜ ~ pyenv uninstall 2.7.13
-pyenv-virtualenv: remove /Users/apple/.pyenv/versions/2.7.13/envs/py27-lektor? y pyenv: remove /Users/apple/.pyenv/versions/2.7.13? y
+
+	➜ ~ pyenv uninstall 2.7.13
+	pyenv-virtualenv: remove /Users/apple/.pyenv/versions/2.7.13/envs/py27-lektor? y pyenv: remove /Users/apple/.pyenv/versions/2.7.13? y
+
 I want to know which virtualenv attaches to which interpreter:
-➜ ~ pyenv virtualenvs
-  3.6.0/envs/py36-lektor (created from /Users/apple/.pyenv/versions/3.6.0)
-  3.6.0/envs/py36-nikola (created from /Users/apple/.pyenv/versions/3.6.0)
-  3.6.0/envs/pydata (created from /Users/apple/.pyenv/versions/3.6.0)
-  3.6.0/envs/sphinx (created from /Users/apple/
+
+	➜ ~ pyenv virtualenvs
+	  3.6.0/envs/py36-lektor (created from /Users/apple/.pyenv/versions/3.6.0)
+	  3.6.0/envs/py36-nikola (created from /Users/apple/.pyenv/versions/3.6.0)
+	  3.6.0/envs/pydata (created from /Users/apple/.pyenv/versions/3.6.0)
+	  3.6.0/envs/sphinx (created from /Users/apple/
 
